@@ -8,6 +8,9 @@ from flask_login import login_user,logout_user,login_required,current_user
 
 
 @app.route('/')
-@app.route('/home', methods=['GET'])
-def home_page():
+def main_page():
     return render_template('landing_page.html')
+
+@app.route('/home')
+def home_page():
+    return render_template('index.html')
