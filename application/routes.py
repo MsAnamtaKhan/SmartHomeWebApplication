@@ -17,6 +17,10 @@ def main_page():
 def home_page():
     return render_template('index.html')
 
+@app.route('/activities')
+def activities_page():
+    return render_template('activities.html')
+
 
 @app.route('/login',methods=['GET', 'POST'])
 def login_page():
