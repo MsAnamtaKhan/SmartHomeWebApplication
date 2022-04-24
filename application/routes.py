@@ -32,6 +32,9 @@ def add_contacts_page():
 @app.route('/login',methods=['GET', 'POST'])
 def login_page():
     form = LoginForm()
+    if form.validate_on_submit():
+        print('validated')
+        return redirect(url_for('home_page'))
     return render_template('login.html',form=form)
 
 @app.route('/signup',methods=['GET', 'POST'])

@@ -26,7 +26,8 @@
 	
 		<div class="right">
 		<h5>Login</h5>
-		
+		<form method="POST">
+			{{ form.hidden_tag() }}	
 		
         {{ form.username(class="form-control inputs",type="text",placeholder="User Name") }}
 
@@ -41,7 +42,7 @@
 			
 			<br>
 			{{ form.submit(class="btn btn-primary btn-xl text-uppercase") }}
-			
+		</form>
 	</div>
 	
 </div>
