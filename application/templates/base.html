@@ -36,13 +36,15 @@
             </div>
 
             <ul class="list-unstyled components">
-               
+                <li>
+                    <a href="{{ url_for('home_page') }}">Home</a>
+                </li>
                 <li class="active">
                     <li>
                     <a href="#">Todo List</a>
                 </li>
                 <li>
-                    <a href="#">Elderly Profile</a>
+                    <a href="{{ url_for('elderly_profile') }}">Elderly Profile</a>
                 </li>
                  <li>
                     <a href="#">Activities</a>
@@ -51,7 +53,7 @@
                     <a href="#">Contacts</a>
                 </li>
                  <li>
-                    <a href="#">Account</a>
+                    <a href="{{ url_for('user_profile') }}">Account</a>
                 </li>
                 
                     <!-- <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Home</a> -->
