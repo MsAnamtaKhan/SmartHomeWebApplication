@@ -25,6 +25,9 @@ def activities_page():
 def contacts_page():
     return render_template('contacts.html')
 
+@app.route('/addcontacts')
+def add_contacts_page():
+    return render_template('addcontacts.html')
 
 @app.route('/login',methods=['GET', 'POST'])
 def login_page():
