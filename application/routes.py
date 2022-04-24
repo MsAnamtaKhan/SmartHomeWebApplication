@@ -5,7 +5,7 @@ from flask import render_template, redirect, url_for,flash,request,session
 #from market import db
 from flask_login import login_user,logout_user,login_required,current_user
 
-from application.forms import LoginForm,UserForm,ElderlyForm
+from application.forms import LoginForm,UserForm,ElderlyForm,AddContactsForm
 
 
 
@@ -25,9 +25,14 @@ def activities_page():
 def contacts_page():
     return render_template('contacts.html')
 
-@app.route('/addcontacts')
+@app.route('/addcontacts',methods=['GET', 'POST'])
 def add_contacts_page():
-    return render_template('addcontacts.html')
+    form=AddContactsForm()
+    if form.validate_on_submit():
+        print('validated')
+        return redirect(url_for('contacts_page'))
+    return render_template('addcontacts.html',form=form)
+    
 
 @app.route('/login',methods=['GET', 'POST'])
 def login_page():
