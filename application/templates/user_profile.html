@@ -1,10 +1,17 @@
-<!DOCTYPE html>
-<html lang="en-US">
-  <head>
+{% extends 'base.html' %}
+
+
+{% block title %}
+  USER PROFILE
+{% endblock %}
+
+
+
+  {% block head %}
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>USER PROFILE</title>
+  
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="crossorigin"/>
     <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&amp;family=Roboto:wght@300;400;500;700&amp;display=swap"/>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&amp;family=Roboto:wght@300;400;500;700&amp;display=swap" media="print" onload="this.media='all'"/>
@@ -25,14 +32,12 @@
         }
       </style>
     </noscript>
-  </head>
+    {% endblock %}
+    
+    {% block content %}
+    
   <body id="top">
-    <header class="d-print-none">
-      <div class="container text-center text-lg-left">
-        
-        </div>
-      </div>
-    </header>
+    
     <div class="page-content">
       <div class="container">
 <div class="cover shadow-lg bg-white">
@@ -41,9 +46,9 @@
       <div class="col-lg-4 col-md-5">
         <div class="avatar hover-effect bg-white shadow-sm p-1"><img src="{{ url_for('static', filename = 'user_profile/images/avatar.jpg') }}" width="200" height="200"/></div>
       </div>
-      <div class="col-lg-8 col-md-7 text-center text-md-start">
-        <h2 class="h1 mt-2"  data-aos="fade-left" data-aos-delay="0">Joyce Harrison</h2>
-        <p data-aos="fade-left" data-aos-delay="100">Graphic Designer & Web Developer</p>
+      <div class="col-lg-6 col-md-7 text-center text-md-start" style="margin-top:6rem">
+        <h2 class="h1 mt-2"  data-aos="fade-left"  data-aos-delay="0">Joyce Harrison</h2>
+        <p data-aos="fade-left"  style="color: white;" data-aos-delay="100">Graphic Designer & Web Developer</p>
         </div>
     </div>
   </div>
@@ -87,8 +92,9 @@
           </div>
 
           <div class="col-sm-8">
-           <button class="btn btn-primary"
-           type="button">Update</button>
+
+            <a class="btn btn-primary" href="{{ url_for('user_update') }}" >Update</a>
+           
             
           </div>
         </div>
@@ -112,4 +118,5 @@
     <script src = "{{ url_for('static', filename = 'user_profile/scripts/aos.js') }}"></script>
     <script src = "{{ url_for('static', filename = 'user_profile/scripts/main.js') }}"></script>
   </body>
-</html>
+
+  {% endblock %}

@@ -53,3 +53,26 @@ def elderly_page():
 def user_profile():
     return render_template('user_profile.html')
 
+
+
+
+@app.route('/elderly_profile',methods=['GET', 'POST'])
+def elderly_profile():
+    return render_template('elderly_profile.html')
+
+
+@app.route('/elderly_update',methods=['GET', 'POST'])
+def elderly_update():
+    form=ElderlyForm()
+    if form.validate_on_submit():
+        return redirect(url_for('home_page'))
+    return render_template('elderly_update.html',form=form)
+
+
+@app.route('/user_update',methods=['GET', 'POST'])
+def user_update():
+    form=UserForm()
+    if form.validate_on_submit():
+        print('validated')
+        return redirect(url_for('home_page'))
+    return render_template('user_update.html',form=form)
