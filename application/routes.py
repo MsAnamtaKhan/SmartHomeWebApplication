@@ -21,6 +21,10 @@ def home_page():
 def activities_page():
     return render_template('activities.html')
 
+@app.route('/contacts')
+def contacts_page():
+    return render_template('contacts.html')
+
 
 @app.route('/login',methods=['GET', 'POST'])
 def login_page():
