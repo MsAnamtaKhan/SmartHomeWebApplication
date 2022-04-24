@@ -2,5 +2,41 @@
 {% block title %}
     Home Page
 {% endblock %}
-{% block content %}  
+{% block content %} 
+<div class="dropdown">
+  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Select Camera Here
+  </button>
+  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+    <a class="dropdown-item" href="#">Phone</a>
+    <a class="dropdown-item" href="#">Webcam</a>
+  </div>
+</div>
+
+<section class=" gradient-custom">
+  <div class="box"></div>
+</section> 
+
+<div class="alert alert-danger" role="alert" style="margin-top: 3px;" >
+    <p class=" alert-danger" role="alert">Alerts</p>
+  Sleeping schedule disturbed
+</div>
+<style>
+   .gradient-custom {
+  /* fallback for old browsers */
+  background: #a7bafa;
+
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: -webkit-linear-gradient(to bottom right, rgb(137, 169, 199), rgb(53, 114, 228));
+
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: linear-gradient(to bottom right, rgb(170, 179, 204), rgb(178, 175, 218))
+}
+.box{
+    margin-top: 5px;
+    height: 370px;
+    width: 100%;
+
+}
+</style>
 {% endblock %}
