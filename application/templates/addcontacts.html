@@ -16,34 +16,12 @@
 
                   <div class="form-outline">
                     <!-- <input type="text" id="firstName" class="form-control form-control-lg" /> -->
-                    {{ form.firstname(class="form-control input--style-5",type="text",placeholder="First Name") }}
+                    {{ form.name(class="form-control input--style-5",type="text",placeholder="Name") }}
 
                     <!-- <label class="form-label" for="firstName">First Name</label> -->
                   </div>
 
                 </div>
-                <div class="col-md-6 mb-4">
-
-                  <div class="form-outline">
-                     {{ form.lastname(class="form-control input--style-5",type="text",placeholder="Last Name") }}
-                     <!-- <input type="text" id="lastName" class="form-control form-control-lg" /> -->
-                    <!-- <label class="form-label" for="lastName">Last Name</label> --> 
-                  </div>
-
-                </div>
-              </div>
-
-              <div class="row">
-                <div class="col-md-6 mb-4 d-flex align-items-center">
-
-                  
-
-                </div>
-               
-              </div>
-
-              <div class="row">
-               
                 <div class="col-md-6 mb-4 pb-2">
 
                   <div class="form-outline">
@@ -53,18 +31,19 @@
                   </div>
 
                 </div>
-                 <div class="col-md-6 mb-4 pb-2">
-
-                  <div class="form-outline">
-                    <!-- <input type="email" id="emailAddress" class="form-control form-control-lg" />
-                    <label class="form-label" for="emailAddress">Address</label> -->
-                                         {{ form.address(class="form-control input--style-5",type="text",placeholder="Address") }}
-                  </div>
-
-                </div>
               </div>
 
-             <div class="col-sm-8">
+             
+
+              <div class="row">
+               
+                
+                 
+              </div>
+
+              
+
+             <div class="col-sm-8" style="margin-left:10rem">
 
                                      {{ form.submit(class="btn btn-primary tn-lg ", onclick="window.location.href='{{ url_for( 'contacts_page' ) }}'") }}
            

@@ -46,7 +46,7 @@
           <div class="avatar p-1"><img class="img-thumbnail shadow-2-strong" src="{{ url_for('static', filename = 'elderly_profile/images/avatar.jpg') }}" width="160" height="160"/></div>
           <div class="header-bio mt-3">
             <div data-aos="zoom-in" data-aos-delay="0">
-              <h2 class="h1">Walter Patterson</h2>
+              <h2 class="h1">{{elderly['Username']}}</h2>
               <div class="col-md-5 offset-lg-1" style="margin-top:40px;margin-bottom:40px;text-align:left;position:centre;">
                 <div class="row mt-2" >
                  
@@ -54,25 +54,25 @@
                     <div class="pb-2 fw-bolder"><i class="far fa-calendar-alt pe-2 text-muted" style="width:24px;opacity:0.85;"></i> Age</div>
                   </div>
                   <div class="col-sm-7">
-                    <div class="pb-2">28</div>
+                    <div class="pb-2">{{elderly['Age']}}</div>
                   </div>
                   <div class="col-sm-5">
                     <div class="pb-2 fw-bolder"><i class="far fa-envelope pe-2 text-muted" style="width:24px;opacity:0.85;"></i> Email</div>
                   </div>
                   <div class="col-sm-7">
-                    <div class="pb-2">walter@company.com</div>
+                    <div class="pb-2">{{elderly['Email']}}</div>
                   </div>
                   <div class="col-sm-5">
                     <div class="pb-2 fw-bolder"><i class="fas fa-phone pe-2 text-muted" style="width:24px;opacity:0.85;"></i> Phone</div>
                   </div>
                   <div class="col-sm-7">
-                    <div class="pb-2">+0718-111-0011</div>
+                    <div class="pb-2">{{elderly['Phone']}}</div>
                   </div>
                   <div class="col-sm-5">
                     <div class="pb-2 fw-bolder"><i class="fas fa-map-marker-alt pe-2 text-muted" style="width:24px;opacity:0.85;"></i> Address</div>
                   </div>
                   <div class="col-sm-7">
-                    <div class="pb-2">131 W, City Center, New York, U.S.A</div>
+                    <div class="pb-2">{{elderly['Address']}}</div>
                   </div>
                 </div>
               </div>

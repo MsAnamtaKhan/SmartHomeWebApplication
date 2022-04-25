@@ -28,9 +28,7 @@ class ElderlyForm(FlaskForm):
     submit = SubmitField(label='SUBMIT')
 
 class AddContactsForm(FlaskForm):
-    firstname = StringField(label='First Name:', validators=[Length(min=2, max=30), DataRequired()])
-    lastname = StringField(label='Last Name:', validators=[Length(min=2, max=30), DataRequired()])
-    address = StringField(label='Address:', validators=[Length(min=5, max=30), DataRequired()])
+    name = StringField(label='Name:', validators=[Length(min=2, max=30), DataRequired()])
     phone = StringField(label='Phone:', validators=[Length(min=11, max=11), DataRequired()])    
     submit = SubmitField(label='SUBMIT')
 

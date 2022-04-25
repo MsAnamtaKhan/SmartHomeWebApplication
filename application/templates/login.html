@@ -1,17 +1,22 @@
-<!DOCTYPE html>
-<html lang="en" >
-<head>
-  <meta charset="UTF-8">
-  <title>LOGIN PAGE</title>
+{% extends 'alert.html' %}
+
+
+{% block title %}
+  LOGIN PAGE
+{% endblock %}
+
+{% block head %}
   <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 
 
   <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename = 'login_page/css/style.css') }}"></linnk>
 
 <!-- <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous"><link rel="stylesheet" href="./style.css"> -->
+{% endblock %}
 
-</head>
-<body>
+
+{% block content %}
+<body>	
 <!-- partial:index.partial.html -->
 <div class="box-form">
 	<div class="left">
@@ -25,7 +30,7 @@
 	
 	
 		<div class="right">
-		<h5>Login</h5>
+		<h5 style="padding-bottom:20px; padding-top:40px">Login</h5>
 		<form method="POST">
 			{{ form.hidden_tag() }}	
 		
@@ -37,7 +42,7 @@
 			
 			<br><br>
 			
-			<p style="text-align:center;padding-bottom: 10px;">Don't have an account? <a href="{{ url_for('signup_page')}}">Creat Your Account</a></p>
+			<p style="text-align:center;padding-bottom: 0px;">Don't have an account? <a href="{{ url_for('signup_page')}}">Creat Your Account</a></p>
 		
 			
 			<br>
@@ -46,7 +51,7 @@
 	</div>
 	
 </div>
-<!-- partial -->
-  
+<!-- partial -->  
 </body>
-</html>
+
+{% endblock %}

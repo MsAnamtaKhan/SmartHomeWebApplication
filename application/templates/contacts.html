@@ -4,41 +4,20 @@
 {% endblock %}
 {% block content %}   
 <div class="container">
-                   <div class="pb-2 fw-bolder"><i class="fas fa-plus pe-2 text-muted" style="width:24px;opacity:0.85;"></i><a href="{{ url_for('add_contacts_page') }}">Add more contacts</a></div>
+<div class="pb-2 fw-bolder"><i class="fas fa-plus pe-2 text-muted" style="width:24px;opacity:0.85;"></i><a href="{{ url_for('add_contacts_page') }}">Add more contacts</a></div>
   <div class="card-deck">
+   {% for contacts in contacts %}
     <div class="card">
       <img class="card-img-top" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQD8PAG2g-EU806h1b9e5tmjZJMX0mMSUtEcA&usqp=CAU" alt="Smart care">
       <div class="card-body text-center">
           <img class="avatar rounded-circle" src="https://s3.eu-central-1.amazonaws.com/bootstrapbaymisc/blog/24_days_bootstrap/robert.jpg" alt="Bologna">
-        <h4 class="card-title">Ali Ehmad</h4>
-        <h6 class="card-subtitle mb-2">0300-9895576</h6>
-        <p class="card-text">House # 380 Street 1  </p>
+        <h4 class="card-title">{{contacts['Name']}}</h4>
+        <h6 class="card-subtitle mb-2">{{ contacts['EmergencyContact'] }}</h6>
+      
       </div>
-      <a href="#" class="btn btn-info" style="background-color: rgb(251, 75, 75);border-color: red;"  >Delete</a>
+      <a href="{{ url_for('delete_contacts',id=contacts['_id'] )}}" class="btn btn-info" style="background-color: rgb(251, 75, 75);border-color: red;"  >Delete</a>
     </div>
-    <div class="card">
-      <img class="card-img-top" src="https://diysmarthomeguide.com/wp-content/uploads/2018/04/seniors-1505935_960_720.jpg" alt="Smart care">
-      <div class="card-body text-center">
-          <img class="avatar rounded-circle" src="https://s3.eu-central-1.amazonaws.com/bootstrapbaymisc/blog/24_days_bootstrap/robert.jpg" alt="Bologna">
-        <h4 class="card-title">Shah Nawaz</h4>
-        <h6 class="card-subtitle mb-2">0314-8567900</h6>
-        <p class="card-text">DHA Phase 5</p>
-      </div>
-      <a href="#" class="btn btn-info" style="background-color: rgb(251, 75, 75);border-color: red;">Delete</a>
-    </div>
-    <div class="card">
-      <img class="card-img-top" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQD8PAG2g-EU806h1b9e5tmjZJMX0mMSUtEcA&usqp=CAU" alt="Smart care">
-      <div class="card-body text-center">
-          <img class="avatar rounded-circle" src="https://s3.eu-central-1.amazonaws.com/bootstrapbaymisc/blog/24_days_bootstrap/robert.jpg" alt="Bologna">
-        <h4 class="card-title">Ali</h4>
-        <h6 class="card-subtitle mb-2">03154198867</h6>
-        <p class="card-text">XYZ</p>
-       
-      </div>
-     <a href="#" class="btn btn-info" style="background-color: rgb(251, 75, 75);border-color: red;">Delete</a>
-    </div>
-  </div>
-
+    {% endfor %}
 </div>
 <style>
 /* body{

@@ -3,12 +3,19 @@ from flask_bcrypt import Bcrypt
 # from flask_sqlalchemy import SQLAlchemy
 from flask_login import LoginManager
 from flask_socketio import SocketIO, emit
-
+from flask_pymongo import PyMongo
 
 app = Flask(__name__)
 
 # app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///market.db'
 app.config['SECRET_KEY'] = 'ec9439cfc6c796ae2029594d'
+app.config['MONGO_DBNAME']='SHN'
+app.config['MONGO_URI']='mongodb+srv://anamtakhan:dAkJ6dYuPftCSsJK@cluster0.fmum4.mongodb.net/SHN?retryWrites=true&w=majority'
+
+#setup_mongodb
+mongdb_client=PyMongo(app)
+db=mongdb_client.db
+
 #db = SQLAlchemy(app)
 #bcrypt=Bcrypt(app)
 

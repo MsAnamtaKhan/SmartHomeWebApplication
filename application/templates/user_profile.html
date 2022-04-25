@@ -47,8 +47,8 @@
         <div class="avatar hover-effect bg-white shadow-sm p-1"><img src="{{ url_for('static', filename = 'user_profile/images/avatar.jpg') }}" width="200" height="200"/></div>
       </div>
       <div class="col-lg-6 col-md-7 text-center text-md-start" style="margin-top:6rem">
-        <h2 class="h1 mt-2"  data-aos="fade-left"  data-aos-delay="0">Joyce Harrison</h2>
-        <p data-aos="fade-left"  style="color: white;" data-aos-delay="100">Graphic Designer & Web Developer</p>
+        <h2 class="h1 mt-2"  data-aos="fade-left"  data-aos-delay="0">{{ session['user']['Username'] }}</h2>
+        <!-- <p data-aos="fade-left"  style="color: white;" data-aos-delay="100">Graphic Designer & Web Developer</p> -->
         </div>
     </div>
   </div>
@@ -57,39 +57,27 @@
     
       <div class="col-md-5 offset-md-1">
         <div class="row mt-2">
-          <div class="col-sm-4">
-            <div class="pb-1">Age</div>
-          </div>
-          <div class="col-sm-8">
-            <div class="pb-1 text-secondary">28</div>
-          </div>
+          
           <div class="col-sm-4">
             <div class="pb-1">Email</div>
           </div>
           <div class="col-sm-8">
-            <div class="pb-1 text-secondary">Joyce@company.com</div>
+            <div class="pb-1 text-secondary">{{ session['user']['Email'] }}</div>
           </div>
           <div class="col-sm-4">
             <div class="pb-1">Phone</div>
           </div>
           <div class="col-sm-8">
-            <div class="pb-1 text-secondary">+0718-111-0011</div>
+            <div class="pb-1 text-secondary">{{ session['user']['Phone'] }}</div>
           </div>
           <div class="col-sm-4">
             <div class="pb-1">Address</div>
           </div>
           <div class="col-sm-8">
-            <div class="pb-1 text-secondary">140, City Center, New York, U.S.A</div>
+            <div class="pb-1 text-secondary">{{ session['user']['Address'] }}</div>
 
           </div>
 
-          <div class="col-sm-4">
-            <div class="pb-1">Password</div>
-          </div>
-          <div class="col-sm-8">
-            <div class="pb-1 text-secondary">abcxyz</div>
-            
-          </div>
 
           <div class="col-sm-8">
 
