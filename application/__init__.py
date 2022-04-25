@@ -4,13 +4,16 @@ from flask_bcrypt import Bcrypt
 from flask_login import LoginManager
 from flask_socketio import SocketIO, emit
 from flask_pymongo import PyMongo
-
+import os
+from dotenv import load_dotenv
+load_dotenv()
 app = Flask(__name__)
 
 # app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///market.db'
 app.config['SECRET_KEY'] = 'ec9439cfc6c796ae2029594d'
 app.config['MONGO_DBNAME']='SHN'
-app.config['MONGO_URI']='mongodb+srv://anamtakhan:dAkJ6dYuPftCSsJK@cluster0.fmum4.mongodb.net/SHN?retryWrites=true&w=majority'
+app.config['MONGO_URI']=os.getenv('URI')
+
 
 #setup_mongodb
 mongdb_client=PyMongo(app)
