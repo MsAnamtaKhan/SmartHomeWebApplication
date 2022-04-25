@@ -34,7 +34,7 @@ class User:
       return -1
     else:
       if db.Elderly.find_one({ "Email": Elderly['Email'] }):
-        flash(f'User with this Email already exist: ',category='alert')
+        #flash(f'User with this Email already exist: ',category='alert')
         return -2
       else:
          if db.Elderly.insert_one(Elderly):
