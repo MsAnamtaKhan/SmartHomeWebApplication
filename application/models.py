@@ -128,12 +128,15 @@ class User:
       "Username": request.form.get('username')
     })
 
-    if User and pbkdf2_sha256.verify(request.form.get('password'), User['Password']):
-      User['_id']=str(User['_id'])
-      return self.start_session(User)
-    
-      
-    return False
+    if User:
+      if pbkdf2_sha256.verify(request.form.get('password'), User['Password']):
+        User['_id']=str(User['_id'])
+        self.start_session(User)
+        return 1
+      else:
+        return -2
+    else :
+      return -1
 
   def addcontacts(self):
     contacts = {

@@ -52,12 +52,17 @@ def login_page():
     form = LoginForm()
     if request.method == 'POST':
         if form.validate_on_submit():
-            if(User().login()!=False):
-    
+            loginuser=User().login()
+            if(loginuser>0):
                 flash(f'Successfully Logged in! ',category='success')
                 return redirect(url_for('home_page'))
             else:
-                flash(f'User with this Username does not exist: ',category='danger')
+                if loginuser==-1:
+                    flash(f'User with this Username does not exist ',category='danger')
+                else:
+                    if loginuser==-2:
+                        flash(f'Incorrect Password ',category='danger')
+
             
             
     
@@ -75,10 +80,10 @@ def signup_page():
                 return redirect(url_for('elderly_page'))
             else:
                 if (res==-1):
-                    flash(f'User with this Username already exist: ',category='danger')
+                    flash(f'User with this Username already exist ',category='danger')
                 else:
                     if res==-2:
-                        flash(f'User with this Email already exist: ',category='danger')
+                        flash(f'User with this Email already exist ',category='danger')
 
     return render_template('user_signup.html',form=form)
 
@@ -94,10 +99,10 @@ def elderly_page():
                 return redirect(url_for('home_page'))
             else:
                 if (res==-1):
-                    flash(f'User with this Username already exist: ',category='danger')
+                    flash(f'User with this Username already exist ',category='danger')
                 else:
                     if res==-2:
-                        flash(f'User with this Email already exist: ',category='danger')
+                        flash(f'User with this Email already exist ',category='danger')
                 
     return render_template('elderly_signup.html',form=form)
 
@@ -142,3 +147,9 @@ def delete_contacts(id):
     if(User().deleteContacts(id)):
         flash(f'Deleted Successfully',category='success')
         return redirect(url_for('contacts_page'))
+
+
+@app.route('/logout',methods=['GET', 'POST'])
+def signout():
+    User().signout()
+    return redirect(url_for('main_page'))
