@@ -42,7 +42,7 @@ def add_contacts_page():
     if request.method == 'POST':
         if form.validate_on_submit():
             if(User().addcontacts()!=False):
-                flash(f'Contact Add Successfully',category='success')
+                flash(f'Contact Added Successfully',category='success')
                 return redirect(url_for('contacts_page'))
     return render_template('addcontacts.html',form=form)
     
@@ -54,10 +54,10 @@ def login_page():
         if form.validate_on_submit():
             if(User().login()!=False):
     
-                flash(f'Successfully Logged in!: ',category='success')
+                flash(f'Successfully Logged in! ',category='success')
                 return redirect(url_for('home_page'))
             else:
-                flash(f'User with this Email does not exist: ',category='danger')
+                flash(f'User with this Username does not exist: ',category='danger')
             
             
     
@@ -122,7 +122,7 @@ def elderly_update():
     if request.method == 'POST':
         if form.validate_on_submit():
             if(User().updateElder()):
-                flash(f'Update Successfully',category='success')
+                flash(f'Updated Successfully',category='success')
                 return redirect(url_for('elderly_profile'))
     return render_template('elderly_update.html',form=form)
 
@@ -133,12 +133,12 @@ def user_update():
     if request.method == 'POST':
         if form.validate_on_submit():
             if(User().updateUser()):
-                flash(f'Update Successfully',category='success')
+                flash(f'Updated Successfully',category='success')
                 return redirect(url_for('user_profile'))
     return render_template('user_update.html',form=form)
 
 @app.route('/delete/<string:id>',methods=['GET', 'POST'])
 def delete_contacts(id):
     if(User().deleteContacts(id)):
-        flash(f'Delete Successfully',category='success')
+        flash(f'Deleted Successfully',category='success')
         return redirect(url_for('contacts_page'))
