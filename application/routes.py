@@ -1,3 +1,4 @@
+import imp
 from application import app
 from flask import render_template, redirect, url_for,flash,request,session
 from application.models import User
@@ -6,6 +7,11 @@ from application import db
 from flask_login import login_user,logout_user,login_required,current_user
 
 from application.forms import LoginForm,UserForm,ElderlyForm,AddContactsForm
+import device
+import cv2
+
+from PyQt5.QtMultimedia import *
+from PyQt5.QtMultimediaWidgets import *
 
 
 
@@ -15,7 +21,11 @@ def main_page():
 
 @app.route('/home')
 def home_page():
-    return render_template('index.html')
+    devices = QCameraInfo.availableCameras()
+    available_devices = []
+    for name in devices:
+        print(available_devices.append(name.description()))
+    return render_template('index.html',available_devices=available_devices)
 
 @app.route('/activities')
 def activities_page():

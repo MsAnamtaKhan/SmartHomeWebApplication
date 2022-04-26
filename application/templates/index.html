@@ -3,19 +3,100 @@
     Home Page
 {% endblock %}
 {% block content %} 
-<div class="dropdown">
-  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    Select Camera Here
-  </button>
-  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-    <a class="dropdown-item" href="#">Phone</a>
-    <a class="dropdown-item" href="#">Webcam</a>
+
+<div class="row">
+  <div class="col-8">
+    <label class="mr-sm-2" for="inlineFormCustomSelect" style="font-size:20px;font-weight:bold;color:rgb(13, 5, 42);margin-left:1rem">Select Camera</label>
+    
+      <select class="custom-select mr-sm-2" id="inlineFormCustomSelect" style="width:40%">
+      
+        {% for devices in available_devices %}
+        <option value={{devices}}>{{ devices }}</option>        
+    {% endfor %}
+      </select>
+  </div>
+<div class="col-4">
+  
+<h3 style="color: rgb(13, 5, 42); margin-left:90px">Live Logs</h3>
+</div>
+</div>
+
+<div class="row">
+  <div class="col-8">
+    <section class=" gradient-custom">
+      <div class="box"></div>
+    </section> 
+  </div>
+  
+  <div class="col-4">
+    <div class="box text-nowrap" style="overflow-x:auto;overflow-y:auto;">
+    <table class="table table-striped table-bordered table-hover table-dark" style="width:20px">
+      
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col" >Timestamp</th>
+          <th scope="col">Activity</th>
+          
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">1</th>
+          <td>2021-01-26T05:37:21.173+00:00</td>
+          <td>Eating</td>
+        </tr>
+        <tr>
+          <th scope="row">2</th>
+          <td>2021-01-26T05:37:21.173+00:00</td>
+          <td>Sleeping</td>
+        
+        </tr>
+        <tr>
+          <th scope="row">3</th>
+          <td>2021-01-26T05:37:21.173+00:00</td>
+          <td>Sitting</td>
+          
+        </tr>
+
+
+        <tr>
+          <th scope="row">4</th>
+          <td>2021-01-26T05:37:21.173+00:00</td>
+          <td>Sitting</td>
+          
+        </tr>
+        <tr>
+          <th scope="row">5</th>
+          <td>2021-01-26T05:37:21.173+00:00</td>
+          <td>Sitting</td>
+          
+        </tr>
+        <tr>
+          <th scope="row">6</th>
+          <td>2021-01-26T05:37:21.173+00:00</td>
+          <td>Sitting</td>
+          
+        </tr>
+        <tr>
+          <th scope="row">7</th>
+          <td>2021-01-26T05:37:21.173+00:00</td>
+          <td>Sitting</td>
+          
+        </tr>
+        <tr>
+          <th scope="row">8</th>
+          <td>2021-01-26T05:37:21.173+00:00</td>
+          <td>Sitting</td>
+          
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  
   </div>
 </div>
 
-<section class=" gradient-custom">
-  <div class="box"></div>
-</section> 
 
 <div class="alert alert-danger" role="alert" style="margin-top: 3px;" >
     <p class=" alert-danger" role="alert">Alerts</p>
@@ -34,6 +115,7 @@
 }
 .box{
     margin-top: 5px;
+    margin-bottom: 30px;
     height: 370px;
     width: 100%;
 
