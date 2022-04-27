@@ -3,12 +3,13 @@
     Add Contacts Page
 {% endblock %}
 {% block content %}
+<body style="background-color:#88bdbc">
 <section class="vh-100 gradient-custom">
   <div class="container py-5 h-100">
     <div class="row justify-content-center align-items-center h-100">
       <div class="col-12 col-lg-9 col-xl-7">
-        <div class="card shadow-2-strong card-registration" style="border-radius: 15px;">
-          <div class="card-body p-4 p-md-5">
+        <div class="card shadow-2-strong card-registration" style="border-radius: 15px; height: 20rem;padding-top:80px">
+          <div class="card-body p-4 p-md-5" >
             <form method="POST">
  {{ form.hidden_tag() }}
               <div class="row">
@@ -45,7 +46,7 @@
 
              <div class="col-sm-8" style="margin-left:10rem">
 
-                                     {{ form.submit(class="btn btn-primary tn-lg ", onclick="window.location.href='{{ url_for( 'contacts_page' ) }}'") }}
+                                     {{ form.submit(class="btn", onclick="window.location.href='{{ url_for( 'contacts_page' ) }}'") }}
            
             
           
@@ -61,20 +62,53 @@
   </div>
 </section>
 </body>
-</html>
+
 
 
 <style>
-   .gradient-custom {
+   /* .gradient-custom { */
   /* fallback for old browsers */
-  background: #a7bafa;
+  /* background: #a7bafa; */
 
   /* Chrome 10-25, Safari 5.1-6 */
-  background: -webkit-linear-gradient(to bottom right, rgb(137, 169, 199), rgb(53, 114, 228));
+  /* background: -webkit-linear-gradient(to bottom right, rgb(137, 169, 199), rgb(53, 114, 228)); */
 
   /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-  background: linear-gradient(to bottom right, rgb(170, 179, 204), rgb(178, 175, 218))
+  /* background: linear-gradient(to bottom right, rgb(170, 179, 204), rgb(178, 175, 218)) */
+/* } */
+
+.btn {
+  width:15rem;
+  color: #fff;
+   margin-top: 1rem; 
+  margin-right:20px;
+  background-color: #005555;
+  border-color: #005555;}
+
+.btn:hover {
+    color: #fff;
+    background-color: #069A8E;
+    border-color: #069A8E;
+  }
+
+.btn-check:focus + .btn, .btn:focus {
+    color: #fff;
+    background-color: #88bdbc;
+    border-color: #88bdbc;
+    box-shadow: 0 0 0 0.25rem #88bdbc;
+  }
+
+
+
+.btn-check:checked + .btn, .btn-check:active + .btn, .btn:active, .btn.active, .show > .btn.dropdown-toggle {
+  color: #fff;
+  background-color: #A1E3D8;
+  border-color: #A1E3D8;
 }
+.btn-check:checked + .btn:focus, .btn-check:active + .btn:focus, .btn:active:focus, .btn.active:focus, .show > .btn.dropdown-toggle:focus {
+  box-shadow: 0 0 0 0.25rem #A1E3D8;
+} 
+
 
 .card-registration .select-input.form-control[readonly]:not([disabled]) {
   font-size: 1rem;

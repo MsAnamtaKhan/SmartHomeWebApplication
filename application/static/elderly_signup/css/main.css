@@ -158,7 +158,7 @@ h6 {
    #BACKGROUND
    ========================================================================== */
 .bg-blue {
-  background: #a1b4d9;
+  background: #254e58;
 }
 
 /* ==========================================================================
@@ -190,35 +190,39 @@ h6 {
 /* ==========================================================================
    #BUTTON
    ========================================================================== */
-.btn {
-  line-height: 40px;
-  display: inline-block;
-  padding: 0 25px;
-  cursor: pointer;
-  font-family: "Roboto", "Arial", "Helvetica Neue", sans-serif;
-  color: #fff;
-  -webkit-transition: all 0.4s ease;
-  -o-transition: all 0.4s ease;
-  -moz-transition: all 0.4s ease;
-  transition: all 0.4s ease;
-  font-size: 14px;
-  font-weight: 700;
-}
-
-.btn--radius {
-  -webkit-border-radius: 3px;
-  -moz-border-radius: 3px;
-  border-radius: 3px;
-}
-
-.btn--green {
-  background: #004887;
-}
-
-.btn--green:hover {
-  background: #73a4ce;
-}
-
+   .btn {
+    width:20rem;
+    height:3.5rem;
+    /* margin-left:4rem; */
+    color: #fff;
+    background-color: #005555;
+    border-color: #005555;}
+  
+   .btn:hover {
+      color: #fff;
+      background-color: #069A8E;
+      border-color: #069A8E;
+    }
+  
+  .btn-check:focus + .btn, .btn:focus {
+      color: #fff;
+      background-color: #88bdbc;
+      border-color: #88bdbc;
+      box-shadow: 0 0 0 0.25rem #88bdbc;
+    }
+  
+  
+  
+  .btn-check:checked + .btn, .btn-check:active + .btn, .btn:active, .btn.active, .show > .btn.dropdown-toggle {
+    color: #fff;
+    background-color: #A1E3D8;
+    border-color: #A1E3D8;
+  }
+  .btn-check:checked + .btn:focus, .btn-check:active + .btn:focus, .btn:active:focus, .btn.active:focus, .show > .btn.dropdown-toggle:focus {
+    box-shadow: 0 0 0 0.25rem #A1E3D8;
+  }  
+  
+  
 /* ==========================================================================
    #DATE PICKER
    ========================================================================== */
@@ -441,7 +445,7 @@ input {
 }
 
 .card-1 .card-heading {
-  background: url("../images/bg-head-03.jpg") center center/cover no-repeat;
+  background: url("../images/img1.jpg") center center/cover no-repeat;
   padding-top: 210px;
 }
 

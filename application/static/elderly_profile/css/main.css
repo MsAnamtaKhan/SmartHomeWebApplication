@@ -1,10 +1,33 @@
-
 .btn {
-  width: 100%;
-margin-left:30px;
-margin-top: 30px;
-margin-bottom:30px;
+  width:4rem;
+  color: #fff;
+  background-color: #005555;
+  border-color: #005555;}
+
+.btn:hover {
+    color: #fff;
+    background-color: #069A8E;
+    border-color: #069A8E;
+  }
+
+.btn-check:focus + .btn, .btn:focus {
+    color: #fff;
+    background-color: #88bdbc;
+    border-color: #88bdbc;
+    box-shadow: 0 0 0 0.25rem #88bdbc;
+  }
+
+
+
+.btn-check:checked + .btn, .btn-check:active + .btn, .btn:active, .btn.active, .show > .btn.dropdown-toggle {
+  color: #fff;
+  background-color: #A1E3D8;
+  border-color: #A1E3D8;
 }
+.btn-check:checked + .btn:focus, .btn-check:active + .btn:focus, .btn:active:focus, .btn.active:focus, .show > .btn.dropdown-toggle:focus {
+  box-shadow: 0 0 0 0.25rem #A1E3D8;
+} 
+
 /* Timeline custom component */
 .timeline-card {
   position: relative;

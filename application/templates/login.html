@@ -16,7 +16,7 @@
 
 
 {% block content %}
-<body>	
+<body style="background-color:#254e58">	
 <!-- partial:index.partial.html -->
 <div class="box-form">
 	<div class="left">
@@ -41,11 +41,20 @@
 			
 			<br><br>
 			
-			<p style="text-align:center;padding-bottom: 0px;">Don't have an account? <a href="{{ url_for('signup_page')}}">Creat Your Account</a></p>
+			<p style="text-align:center;padding-bottom: 0px;">Don't have an account? <a href="{{ url_for('signup_page')}}" style="color:blue">Creat Your Account</a></p>
 		
 			
 			<br>
-			{{ form.submit(class="btn btn-primary btn-xl text-uppercase") }}
+			
+				{{ form.submit(class="btn text-uppercase",style="width:60%;height:4rem;margin-left:50px;
+				padding:2em;"
+	
+				) }}
+		
+				<!-- style="background-color:#005555;border-color: #005555;width:60%;height:4rem;margin-left:50px;
+				padding:2em;
+				" -->
+
 		</form>
 	</div>
 	

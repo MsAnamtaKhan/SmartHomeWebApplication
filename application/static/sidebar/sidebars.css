@@ -24,7 +24,7 @@ a, a:hover, a:focus {
 
 .navbar {
     padding: 15px 10px;
-    background: #fff;
+    background: #112D32;
     border: none;
     border-radius: 0;
     margin-bottom: 40px;
@@ -59,7 +59,8 @@ a, a:hover, a:focus {
 #sidebar {
     min-width: 250px;
     max-width: 250px;
-    background: #7386D5;
+    /* background: #7386D5; */
+    background: #112D32;
     color: #fff;
     transition: all 0.6s cubic-bezier(0.945, 0.020, 0.270, 0.665);
     transform-origin: bottom left;
@@ -72,7 +73,8 @@ a, a:hover, a:focus {
 
 #sidebar .sidebar-header {
     padding: 20px;
-    background: #6d7fcc;
+    background: #112D32;
+    /* background: #6d7fcc; */
 }
 
 #sidebar ul.components {
@@ -151,12 +153,13 @@ a.article, a.article:hover {
     padding: 20px;
     min-height: 100vh;
     transition: all 0.3s;
+    
 }
 
 #sidebarCollapse {
     width: 40px;
     height: 40px;
-    background: #f5f5f5;
+    color: #fff;
     cursor: pointer;
 }
 
@@ -165,7 +168,7 @@ a.article, a.article:hover {
     height: 2px;
     margin: 0 auto;
     display: block;
-    background: #555;
+    background: white;
     transition: all 0.8s cubic-bezier(0.810, -0.330, 0.345, 1.375);
     transition-delay: 0.2s;
 }

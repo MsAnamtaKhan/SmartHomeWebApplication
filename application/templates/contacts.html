@@ -3,6 +3,7 @@
     Contacts Page
 {% endblock %}
 {% block content %}   
+<body style="background-color:#88bdbc">
 <div class="container">
 <div class="pb-2 fw-bolder"><i class="fas fa-plus pe-2 text-muted" style="width:24px;opacity:0.85;"></i><a href="{{ url_for('add_contacts_page') }}">Add more contacts</a></div>
   <div class="card-deck">
@@ -19,6 +20,7 @@
     </div>
     {% endfor %}
 </div>
+</body>
 <style>
 /* body{
   padding: 2rem 0rem;

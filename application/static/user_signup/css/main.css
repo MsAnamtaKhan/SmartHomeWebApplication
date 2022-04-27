@@ -1,4 +1,37 @@
 
+.btn {
+  width:20rem;
+  height:3.5rem;
+  margin-left:4rem;
+  color: #fff;
+  background-color: #005555;
+  border-color: #005555;}
+
+ .btn:hover {
+    color: #fff;
+    background-color: #069A8E;
+    border-color: #069A8E;
+  }
+
+.btn-check:focus + .btn, .btn:focus {
+    color: #fff;
+    background-color: #88bdbc;
+    border-color: #88bdbc;
+    box-shadow: 0 0 0 0.25rem #88bdbc;
+  }
+
+
+
+.btn-check:checked + .btn, .btn-check:active + .btn, .btn:active, .btn.active, .show > .btn.dropdown-toggle {
+  color: #fff;
+  background-color: #A1E3D8;
+  border-color: #A1E3D8;
+}
+.btn-check:checked + .btn:focus, .btn-check:active + .btn:focus, .btn:active:focus, .btn.active:focus, .show > .btn.dropdown-toggle:focus {
+  box-shadow: 0 0 0 0.25rem #A1E3D8;
+}  
+
+
 /* ==========================================================================
    #FONT
    ========================================================================== */
@@ -271,7 +304,7 @@ h6 {
    #BACKGROUND
    ========================================================================== */
 .bg-blue {
-  background: #2c6ed5;
+  background: #254e58;
 }
 
 .bg-red {
@@ -295,7 +328,8 @@ h6 {
 }
 
 .bg-gra-03 {
- background-color: #bfc7ed;
+  background-image: url('../images/img.jpg');
+ /* background-color: #6e6658; */
 }
 
 /* ==========================================================================
@@ -395,36 +429,7 @@ h6 {
   font-family: inherit;
 } */
 
-.btn {
-  margin-left: 60px;
-  color: #fff;
-  width:20rem;
-  background-color: #488fb1;
-  border-color: #488fb1;
-  padding: 1.25rem 2.5rem;
-  border-radius: 0.5rem;
-  font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  font-size: 1.5rem;
-  display: inline-block;
-  font-weight: 600;
-  line-height: 1.125;
-  text-align: center;
-  text-decoration: none;
-  vertical-align: middle;
-  cursor: pointer;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  border: 1px solid transparent;
-  border-radius: 0.25rem;
-  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-}
-.btn--radius {
-  -webkit-border-radius: 3px;
-  -moz-border-radius: 3px;
-  border-radius: 3px;
-}
+
 /* 
 .btn--radius-2 {
   -webkit-border-radius: 5px;
@@ -432,36 +437,6 @@ h6 {
   border-radius: 5px;
 } */
 
-.btn--pill {
-  -webkit-border-radius: 20px;
-  -moz-border-radius: 20px;
-  border-radius: 20px;
-}
-
-.btn--green {
-  background: #57b846;
-}
-
-.btn--green:hover {
-  background: #4dae3c;
-}
-
-.btn {
-  background-color: #4272d7;
-}
-
-.btn--blue:hover {
-  background: #3868cd;
-}
-
-.btn--red {
-  
-  background: #004887;
-}
-
-.btn--red:hover {
-  background: #2377a1;
-}
 
 /* ==========================================================================
    #DATE PICKER
@@ -771,7 +746,7 @@ input {
 
 .card-5 .card-heading {
   padding: 20px 0;
-  background: #1a1a1a;
+  background: #112d32;
   -webkit-border-top-left-radius: 10px;
   -moz-border-radius-topleft: 10px;
   border-top-left-radius: 10px;

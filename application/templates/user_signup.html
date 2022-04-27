@@ -31,9 +31,9 @@
 
 {% block content %}
 <body>
-    <div class="page-wrapper bg-gra-03 p-t-45 p-b-50" >
+    <div class="bg-gra-03 p-t-45 p-b-50" >
         <div class="wrapper wrapper--w790">
-            <div class="card card-5" style="margin-left:40px">
+            <div class="card card-5" style="margin-left:0px">
                 <div class="card-heading">
                     <h2 class="title">User Registration Form</h2>
                 </div>
@@ -106,12 +106,12 @@
                             </div>
                         
 
-                        <p style="text-align:center;padding-bottom: 30px;margin-right: 80px; margin-top: 30px;">Already have an account? <a href="{{ url_for('login_page')}}">Login</a></p>
+                        <p style="text-align:center;padding-bottom: 30px;margin-right: 80px; margin-top: 30px;">Already have an account? <a href="{{ url_for('login_page')}}" style="color:blue">Login</a></p>
 		
                         <div>
                             <!-- <button class="btn btn--radius-2 btn--red text-uppercase">Ok</button> -->
 
-                            {{ form.submit(class="btn btn--radius-2 btn--red text-uppercase m-r-45", onclick="window.location.href='{{ url_for( 'elderly_page' ) }}'") }}
+                            {{ form.submit(class="btn text-uppercase") }}
                          
                         </div>
                     </form>

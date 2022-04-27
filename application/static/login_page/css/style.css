@@ -1,5 +1,5 @@
 body {
-  background-color:#cac8e2;
+  background-color:black;
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -37,13 +37,16 @@ body {
   width:39rem;
   background-size: cover;
   background-repeat: no-repeat;
-  background-image: url("https://i.pinimg.com/736x/5d/73/ea/5d73eaabb25e3805de1f8cdea7df4a42--tumblr-backgrounds-iphone-phone-wallpapers-iphone-wallaper-tumblr.jpg");
+  opacity: 80%;
+  background-image: url("../images/img1.png");
+  /* background-image: url("https://i.pinimg.com/736x/5d/73/ea/5d73eaabb25e3805de1f8cdea7df4a42--tumblr-backgrounds-iphone-phone-wallpapers-iphone-wallaper-tumblr.jpg"); */
   overflow: hidden;
 }
 .box-form .left .overlay {
   padding: 30px;
   width: 100%;
   height: 100%;
+  opacity: 60%;
   background: #5961f9ad;
   overflow: hidden;
   box-sizing: border-box;
@@ -60,13 +63,13 @@ body {
   font-weight: 900;
 }
 .box-form .left .overlay span a {
-  background: #3b5998;
+  background: #2f4269;
   color: #FFFFFF;
   margin: 10px;
   padding: 14px 50px;
   border-radius: 100px;
   display: inline-block;
-  box-shadow: 0 3px 6px 1px #042d4657;
+  box-shadow: 0 3px 6px 1px #30556c57;
 }
 .box-form .left .overlay span a:last-child {
   background: #1dcaff;
@@ -114,7 +117,7 @@ label {
 }
 
 
-.btn{
+/* .btn{
   width:5%;
   color: #fff;
   background-color: #488fb1;
@@ -160,7 +163,7 @@ label {
 }
 .btn-check:checked + .btn-primary:focus, .btn-check:active + .btn-primary:focus, .btn-primary:active:focus, .btn-primary.active:focus, .show > .btn-primary.dropdown-toggle:focus {
   box-shadow: 0 0 0 0.25rem #00afc1;
-}
+} */
 
 .text-uppercase {
   text-transform: uppercase !important;
@@ -186,3 +189,34 @@ label {
   border-radius: 0.25rem;
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 } */
+
+/*  */
+ .btn {
+  width:4rem;
+  color: #fff;
+  background-color: #005555;
+  border-color: #005555;}
+
+.btn:hover {
+    color: #fff;
+    background-color: #069A8E;
+    border-color: #069A8E;
+  }
+
+.btn-check:focus + .btn, .btn:focus {
+    color: #fff;
+    background-color: #88bdbc;
+    border-color: #88bdbc;
+    box-shadow: 0 0 0 0.25rem #88bdbc;
+  }
+
+
+
+.btn-check:checked + .btn, .btn-check:active + .btn, .btn:active, .btn.active, .show > .btn.dropdown-toggle {
+  color: #fff;
+  background-color: #A1E3D8;
+  border-color: #A1E3D8;
+}
+.btn-check:checked + .btn:focus, .btn-check:active + .btn:focus, .btn:active:focus, .btn.active:focus, .show > .btn.dropdown-toggle:focus {
+  box-shadow: 0 0 0 0.25rem #A1E3D8;
+} 

@@ -10,6 +10,7 @@
  * Copyright 2011-2021 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  */
+
 :root {
   --bs-blue: #0d6efd;
   --bs-indigo: #6610f2;
@@ -3030,28 +3031,29 @@ textarea.form-control-lg {
 }
 
 .btn-primary {
+  width:20%;
   color: #fff;
-  background-color: #488fb1;
-  border-color: #488fb1;
+  background-color: #005555;
+  border-color: #005555;
 }
 .btn-primary:hover {
   color: #fff;
-  background-color: #4fd3c4;
-  border-color: #4fd3c4;
+  background-color: #069A8E;
+  border-color: #069A8E;
 }
 .btn-check:focus + .btn-primary, .btn-primary:focus {
   color: #fff;
-  background-color: #00afc1;
-  border-color: #00afc1;
-  box-shadow: 0 0 0 0.25rem #006778;
+  background-color: #88bdbc;
+  border-color: #88bdbc;
+  box-shadow: 0 0 0 0.25rem #88bdbc;
 }
 .btn-check:checked + .btn-primary, .btn-check:active + .btn-primary, .btn-primary:active, .btn-primary.active, .show > .btn-primary.dropdown-toggle {
   color: #fff;
-  background-color: #00afc1;
-  border-color: #00afc1;
+  background-color: #A1E3D8;
+  border-color: #A1E3D8;
 }
 .btn-check:checked + .btn-primary:focus, .btn-check:active + .btn-primary:focus, .btn-primary:active:focus, .btn-primary.active:focus, .show > .btn-primary.dropdown-toggle:focus {
-  box-shadow: 0 0 0 0.25rem #006778;
+  box-shadow: 0 0 0 0.25rem #A1E3D8;
 }
 .btn-primary:disabled, .btn-primary.disabled {
   color: #fff;
@@ -11422,10 +11424,14 @@ header.masthead {
   background-size: cover;
 }
 header.masthead .masthead-subheading {
+  color:#4f4a41;
+  font-weight: bold;
   font-size: 1.5rem;
   font-style: italic;
   line-height: 1.5rem;
   margin-bottom: 25px;
+  text-shadow: 0px 0px 0px #6e6658; 
+
   font-family: "Roboto Slab", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
 header.masthead .masthead-heading {
