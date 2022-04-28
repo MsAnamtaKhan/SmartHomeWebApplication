@@ -25,7 +25,8 @@
 
 
 {% block content %}
-    <div class="page-wrapper bg">
+<body style="background-color:#88bdbc">
+    <div class="page-wrapper">
         <div class="wrapper wrapper--w900">
             <div class="card card-6" style="margin-top:4rem">
                 <div class="card-heading">
@@ -96,7 +97,7 @@
                         </div>
                         <div class="card-footer">
                        
-                            {{ form.submit(class="btn btn-primary text-uppercase",type="submit") }}
+                            {{ form.submit(class="btn btn-x1 text-uppercase",type="submit") }}
                          
                    
                         </div>
@@ -107,6 +108,7 @@
             </div>
         </div>
     </div>
+</body>
  <!-- Jquery JS-->
  <script src = "{{ url_for('static', filename = 'user_update/vendor/jquery/jquery.min.js') }}"></script>
    

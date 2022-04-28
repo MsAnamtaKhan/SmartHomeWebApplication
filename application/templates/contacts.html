@@ -4,11 +4,13 @@
 {% endblock %}
 {% block content %}   
 <body style="background-color:#88bdbc">
-<div class="container">
+<div class="container mt-5 mb-3">
 <div class="pb-2 fw-bolder"><i class="fas fa-plus pe-2 text-muted" style="width:24px;opacity:0.85;"></i><a href="{{ url_for('add_contacts_page') }}">Add more contacts</a></div>
-  <div class="card-deck">
-   {% for contacts in contacts %}
-    <div class="card">
+<div class="row">
+  
+{% for contacts in contacts %}
+<div class="col-md-4">
+    <div class="card p-3 mb-2">
       <img class="card-img-top" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQD8PAG2g-EU806h1b9e5tmjZJMX0mMSUtEcA&usqp=CAU" alt="Smart care">
       <div class="card-body text-center">
           <img class="avatar rounded-circle" src="https://s3.eu-central-1.amazonaws.com/bootstrapbaymisc/blog/24_days_bootstrap/robert.jpg" alt="Bologna">
@@ -18,13 +20,14 @@
       </div>
       <a href="{{ url_for('delete_contacts',id=contacts['_id'] )}}" class="btn btn-info" style="background-color: rgb(251, 75, 75);border-color: red;"  >Delete</a>
     </div>
-    {% endfor %}
+  </div>  
+{% endfor %}
+
+</div>
+</div>
 </div>
 </body>
 <style>
-/* body{
-  padding: 2rem 0rem;
-} */
 .avatar {
   border: 0.3rem solid rgba(#fff, 0.3);
   margin-top: -6rem;

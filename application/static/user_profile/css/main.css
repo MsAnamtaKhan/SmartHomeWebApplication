@@ -3,12 +3,12 @@
 /* Timeline custom component */
 
 
-.btn {
+.btn-x1 {
   width:20rem;
 
   color: #fff;
   margin-top: 4rem;
-  margin-left: 20rem;
+  margin-left:4rem;
   background-color: #005555;
   border-color: #005555;}
 
@@ -48,7 +48,7 @@
 
 .timeline-card {
   position: relative;
-  margin-left: 31px;
+  margin-left: 21px;
   border-left: 2px solid;
   /* margin-bottom: 2rem; } */
 }
