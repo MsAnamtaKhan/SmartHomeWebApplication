@@ -1,8 +1,12 @@
+from typing import final
 from flask import Flask, jsonify, request, session, redirect,flash
 from passlib.hash import pbkdf2_sha256
 from application import db
 import uuid
 import bson
+import datetime;
+  
+
 class User:
 
   def start_session(self, user):
@@ -160,6 +164,24 @@ class User:
     contacts=db.Contacts.find({ "UserID": bson.ObjectId(session['user']['_id']) })
     return contacts
   
+  def getUserId(self):
+    return bson.ObjectId(session['user']['_id'])
+
   def deleteContacts(self,id):
     contacts=db.Contacts.delete_one({ "_id":bson.ObjectId(id) })
     return contacts
+
+
+
+  def addactivities(self, currentactivity,id):
+
+    activity = {
+      "_id":bson.ObjectId(),
+      "ElderlyID":id,
+      "Activity": currentactivity,
+      "Date": datetime.datetime.now()
+    }
+    if db.Logs.insert_one(activity):
+      return True
+
+    return False

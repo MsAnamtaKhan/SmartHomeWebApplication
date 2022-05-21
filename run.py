@@ -1,4 +1,5 @@
 from application import app
+from application.models import User
 
 
 from flask import Flask, render_template, Response
@@ -53,7 +54,7 @@ def rescale_list(input_list, size):
     output = [input_list[i] for i in range(0, len(input_list), skip)]
     return output[:size]
 
-def gen_frames():  
+def gen_frames(id):  
     Activitytext = ""
     currentframe = 0 
     counter = 0
@@ -100,6 +101,9 @@ def gen_frames():
                 
                 Activitytext = classes[maxid]
                 print("Activity name",' ------- ',classes[maxid])
+
+                ans = User().addactivities(Activitytext,id)
+                print(ans)
                 
             ret, buffer = cv2.imencode('.jpg', frame)
             frame = buffer.tobytes()
@@ -107,13 +111,17 @@ def gen_frames():
                    b'Content-Type: image/jpeg\r\n\r\n' + frame + b'\r\n')
 
 
+def runv():
+    ans = User().addactivities("Walk")
+    print(ans)
+
 
 #video Streaming and detection of activities
 
-@app.route('/video_feed')
-def video_feed():
+@app.route('/video_feed/<id>')
+def video_feed(id):
     getModel()
-    return Response(gen_frames(), mimetype='multipart/x-mixed-replace; boundary=frame')
+    return Response(gen_frames(id), mimetype='multipart/x-mixed-replace; boundary=frame')
 
 
 

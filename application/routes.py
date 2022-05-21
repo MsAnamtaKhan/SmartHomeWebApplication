@@ -21,11 +21,12 @@ def main_page():
 
 @app.route('/home')
 def home_page():
+    uid = User().getUserId()
     devices = QCameraInfo.availableCameras()
     available_devices = []
     for name in devices:
         print(available_devices.append(name.description()))
-    return render_template('index.html',available_devices=available_devices)
+    return render_template('index.html',available_devices=available_devices, uid=uid)
 
 @app.route('/activities')
 def activities_page():
