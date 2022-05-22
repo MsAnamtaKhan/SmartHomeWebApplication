@@ -19,6 +19,8 @@ class User:
     elderly=db.Elderly.find_one({ "UserID": bson.ObjectId(session['user']['_id']) })
     return elderly
   
+
+
   
 
   def elderly_signup(self):
@@ -86,9 +88,6 @@ class User:
 
     return response
 
-
-   
-
   def signup(self):
     print(request.form)
     User = {
@@ -100,9 +99,6 @@ class User:
       "Address": request.form.get("address")
     }
 
-
-  
-    
     # Encrypt the password
     User['Password'] = pbkdf2_sha256.encrypt(User['Password'])
 
@@ -167,6 +163,9 @@ class User:
   def getUserId(self):
     return bson.ObjectId(session['user']['_id'])
 
+  def getUid(self):
+    return str(session['user']['_id'])
+
   def deleteContacts(self,id):
     contacts=db.Contacts.delete_one({ "_id":bson.ObjectId(id) })
     return contacts
@@ -185,3 +184,10 @@ class User:
       return True
 
     return False
+
+
+  def viewLogs(self, id):
+    logs=db.Logs.find({ "ElderlyID": id })
+    return logs
+  
+

@@ -27,7 +27,7 @@
   <div class="col-8">
     <section class=" gradient-custom">
       <div class="box"> 
-        <img src="{{ url_for('video_feed', id=uid) }}" width="50%"/>
+        <img src="{{ url_for('video_feed', id=uid) }}" width="670" height="350"/>
       </div>
     </section> 
   </div>
@@ -38,63 +38,19 @@
       
       <thead>
         <tr>
-          <th scope="col">#</th>
           <th scope="col" >Timestamp</th>
           <th scope="col">Activity</th>
           
         </tr>
       </thead>
       <tbody>
+      {% for log in logs %}
         <tr>
-          <th scope="row">1</th>
-          <td>2021-01-26T05:37:21.173+00:00</td>
-          <td>Eating</td>
-        </tr>
-        <tr>
-          <th scope="row">2</th>
-          <td>2021-01-26T05:37:21.173+00:00</td>
-          <td>Sleeping</td>
-        
-        </tr>
-        <tr>
-          <th scope="row">3</th>
-          <td>2021-01-26T05:37:21.173+00:00</td>
-          <td>Sitting</td>
-          
-        </tr>
-
-
-        <tr>
-          <th scope="row">4</th>
-          <td>2021-01-26T05:37:21.173+00:00</td>
-          <td>Sitting</td>
-          
-        </tr>
-        <tr>
-          <th scope="row">5</th>
-          <td>2021-01-26T05:37:21.173+00:00</td>
-          <td>Sitting</td>
-          
-        </tr>
-        <tr>
-          <th scope="row">6</th>
-          <td>2021-01-26T05:37:21.173+00:00</td>
-          <td>Sitting</td>
-          
-        </tr>
-        <tr>
-          <th scope="row">7</th>
-          <td>2021-01-26T05:37:21.173+00:00</td>
-          <td>Sitting</td>
-          
-        </tr>
-        <tr>
-          <th scope="row">8</th>
-          <td>2021-01-26T05:37:21.173+00:00</td>
-          <td>Sitting</td>
-          
+          <td>{{log['Date']}}</td>
+          <td>{{log['Activity']}}</td>
         </tr>
       </tbody>
+      {% endfor %}
     </table>
   </div>
   

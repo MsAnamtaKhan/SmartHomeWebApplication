@@ -1,27 +1,35 @@
 from application import app
 from application.models import User
-
-
-from flask import Flask, render_template, Response
-
+from flask import Flask, render_template, Response, flash
+from twilio.rest import Client
 import cv2
 import os
 import numpy as np
 import os.path
+import datetime
 from keras.preprocessing import image as Img
 from keras.applications.inception_v3 import InceptionV3, preprocess_input
 from keras.models import Model, load_model
 from keras.layers import Input
+from dotenv import load_dotenv
+import os
+
+load_dotenv()
 
 #Checks if the run.py file has executed directly and not imported
 
-camera = cv2.VideoCapture(0)
+camera = cv2.VideoCapture(1)
+
 
 base_model = None
 model = None
 inception_model = None
 
 classes = ['Drinking', 'Eating', 'Enter', 'Laydown', 'Leave', 'Sitdown', 'Standup', 'Takepills', 'Usetelephone', 'Walk']
+
+client = Client(os.getenv('account_sid'), os.getenv('auth_token'))
+from_whatsapp_number='whatsapp:+14155238886'
+to_whatsapp_number='whatsapp:+923328192943'
 
 
 def getModel():
@@ -102,18 +110,26 @@ def gen_frames(id):
                 Activitytext = classes[maxid]
                 print("Activity name",' ------- ',classes[maxid])
 
+
+
                 ans = User().addactivities(Activitytext,id)
-                print(ans)
-                
+
+                client.messages.create(from_=from_whatsapp_number,
+                        body='!!Alert!!\n\nElderly is ' + Activitytext + " at " + str(datetime.datetime.now()),
+                        to=to_whatsapp_number)
+
             ret, buffer = cv2.imencode('.jpg', frame)
             frame = buffer.tobytes()
             yield (b'--frame\r\n'
                    b'Content-Type: image/jpeg\r\n\r\n' + frame + b'\r\n')
 
 
-def runv():
-    ans = User().addactivities("Walk")
-    print(ans)
+
+
+# def runv():
+
+#     im = cv2.imread("Frames\frameframe_no0.jpg")
+#     return im
 
 
 #video Streaming and detection of activities
@@ -128,3 +144,4 @@ def video_feed(id):
 
 if __name__ == '__main__':
     app.run(debug=True)
+
